@@ -30,6 +30,13 @@ const testimonials: Testimonial[] = [
     linkedinUrl: "https://www.linkedin.com/in/fedor-beltugov-a6896a37/details/recommendations/",
   },
   {
+    name: "Pavel Avriskin",
+    title: "CPO",
+    company: "CALM",
+    text: "Strong concepts made the final direction difficult to choose. A structured approach led to a clear and effective identity system. Reliable and highly professional.",
+    linkedinUrl: "https://www.linkedin.com/in/fedor-beltugov-a6896a37/details/recommendations/",
+  },
+  {
     name: "Nick Morozov",
     title: "CEO",
     company: "Atelier Morozov",
