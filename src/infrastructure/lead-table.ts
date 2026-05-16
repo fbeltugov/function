@@ -25,9 +25,14 @@ export default class LeadTable {
   private _commercialOfferSheet: Promise<GoogleSpreadsheetWorksheet>;
 
   constructor() {
+    try {
     const data: { private_key: string } = JSON.parse(
       readFileSync(getConfig().table.tokenPath).toString(),
     );
+    } catch (err: Exception) {
+      console.error(err)
+      return
+    }
 
     const jwt = new JWT({
       email: getConfig().table.email,

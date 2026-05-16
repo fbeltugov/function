@@ -76,14 +76,43 @@ export default function Header({ className }: { className?: string }) {
     <>
       {/* Permanent gradient blur overlay - always visible at top */}
       <div 
-        className="fixed top-0 left-0 w-full h-[200px] pointer-events-none z-90"
+        className="fixed top-0 left-0 w-full pointer-events-none z-90"
         style={{
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+          height: '100px',
+          backdropFilter: 'blur(0px) saturate(95%) contrast(105%) brightness(110%)',
+          WebkitBackdropFilter: 'blur(0px) saturate(95%) contrast(105%) brightness(110%)',
+          maskImage: `linear-gradient(to bottom, 
+            rgba(0, 0, 0, 1) 0%, 
+            rgba(0, 0, 0, 1) 9%, 
+            rgba(0, 0, 0, 0) 0%, 
+            rgba(0, 0, 0, 0) 54%)`,
+          WebkitMaskImage: `linear-gradient(to bottom, 
+            rgba(0, 0, 0, 1) 0%, 
+            rgba(0, 0, 0, 1) 9%, 
+            rgba(0, 0, 0, 0) 0%, 
+            rgba(0, 0, 0, 0) 54%)`,
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
         }}
-      />
+      >
+        {/* Top highlight */}
+        <div 
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: `linear-gradient(to bottom, 
+              rgba(255, 255, 255, 0.07) 0%, 
+              transparent 100%)`,
+          }}
+        />
+        {/* Bottom highlight */}
+        <div 
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: `linear-gradient(to top, 
+              rgba(255, 255, 255, 0.08) 0%, 
+              transparent 100%)`,
+          }}
+        />
+      </div>
 
       {/* Render header with scroll behavior */}
       <header
