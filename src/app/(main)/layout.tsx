@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Function Design Studio — Global Remote-First Brand Identity Studio",
     description: "Function Design Studio is a global remote-first brand identity studio creating functional, aesthetic visual systems grounded in analytics and a clear understanding of business objectives.",
     url: getConfig().baseUrl,
-    images: "/opengraph-image.jpg",
+    images: "/OpenGraph.jpg",
     siteName: "FunctionStudio",
   },
   twitter: {
