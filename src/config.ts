@@ -17,6 +17,7 @@ export default function getConfig() {
     table: {
       email: process.env["GOOGLE_SPREADSHEET_EMAIL"] ?? "",
       tokenPath: process.env["GOOGLE_SPREADSHEET_API_KEY_PATH"] ?? "",
+      privateKey: process.env["GOOGLE_SPREADSHEET_PRIVATE_KEY"] ?? "",
       id: process.env["GOOGLE_SPREADSHEET_ID"] ?? "",
     },
     email: {
