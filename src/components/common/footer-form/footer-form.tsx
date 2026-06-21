@@ -53,7 +53,7 @@ export default function FooterForm({ className }: { className?: string }) {
         setName("");
         setPhone("");
         setEmail("");
-        formRef.current.reset();
+        formRef.current?.reset();
       }
     } catch (error) {
       console.error("Error submitting form:", error);
