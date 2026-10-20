@@ -29,13 +29,13 @@ export default function Header({ className }: { className?: string }) {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.classList.add('modal-open');
+      document.body.classList.add("modal-open");
     } else {
-      document.body.classList.remove('modal-open');
+      document.body.classList.remove("modal-open");
     }
 
     return () => {
-      document.body.classList.remove('modal-open');
+      document.body.classList.remove("modal-open");
     };
   }, [isModalOpen]);
 
@@ -55,7 +55,10 @@ export default function Header({ className }: { className?: string }) {
           } else if (currentScrollY < lastScrollY - 10) {
             // Scrolling up (with 10px threshold for smoother detection)
             setIsVisible(true);
-          } else if (currentScrollY > lastScrollY + 10 && currentScrollY > 200) {
+          } else if (
+            currentScrollY > lastScrollY + 10 &&
+            currentScrollY > 200
+          ) {
             // Scrolling down and past 200px (with 10px threshold for smoother behavior)
             setIsVisible(false);
           }
@@ -68,52 +71,12 @@ export default function Header({ className }: { className?: string }) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
     <>
-      {/* Permanent gradient blur overlay - always visible at top */}
-      <div 
-        className="fixed top-0 left-0 w-full pointer-events-none z-90"
-        style={{
-          height: '100px',
-          backdropFilter: 'blur(0px) saturate(95%) contrast(105%) brightness(110%)',
-          WebkitBackdropFilter: 'blur(0px) saturate(95%) contrast(105%) brightness(110%)',
-          maskImage: `linear-gradient(to bottom, 
-            rgba(0, 0, 0, 1) 0%, 
-            rgba(0, 0, 0, 1) 9%, 
-            rgba(0, 0, 0, 0) 0%, 
-            rgba(0, 0, 0, 0) 54%)`,
-          WebkitMaskImage: `linear-gradient(to bottom, 
-            rgba(0, 0, 0, 1) 0%, 
-            rgba(0, 0, 0, 1) 9%, 
-            rgba(0, 0, 0, 0) 0%, 
-            rgba(0, 0, 0, 0) 54%)`,
-          backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        }}
-      >
-        {/* Top highlight */}
-        <div 
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            background: `linear-gradient(to bottom, 
-              rgba(255, 255, 255, 0.07) 0%, 
-              transparent 100%)`,
-          }}
-        />
-        {/* Bottom highlight */}
-        <div 
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            background: `linear-gradient(to top, 
-              rgba(255, 255, 255, 0.08) 0%, 
-              transparent 100%)`,
-          }}
-        />
-      </div>
-
       {/* Render header with scroll behavior */}
       <header
         className={cn(
@@ -122,16 +85,18 @@ export default function Header({ className }: { className?: string }) {
           // Show/hide based on scroll
           isVisible ? "translate-y-0" : "-translate-y-full",
           // Text colors based on pathname
-          pathname == "/contacts" ? "text-[#FF3F1A] fill-[#F0EDE8]" : "text-[#F0EDE8]",
-          className
+          pathname == "/contacts"
+            ? "text-[#FF3F1A] fill-[#F0EDE8]"
+            : "text-[#F0EDE8]",
+          className,
         )}
       >
-        <div className={cn(
-          "mx-auto px-5 flex items-center xs:py-7 py-5"
-        )}>
+        <div className={cn("mx-auto px-5 flex items-center xs:py-7 py-5")}>
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center group">
-            <FunctionLogo className={`origin-left sm:scale-100 scale-119 ${pathname == "/contacts" ? "fill-[#FF3F1A]" : "fill-[#F0EDE8]"} group-hover:fill-[#FF3F1A] transition-colors ease-in-out duration-300`} />
+            <FunctionLogo
+              className={`origin-left sm:scale-100 scale-119 ${pathname == "/contacts" ? "fill-[#FF3F1A]" : "fill-[#F0EDE8]"} group-hover:fill-[#FF3F1A] transition-colors ease-in-out duration-300`}
+            />
           </Link>
           <div className="grow-1"></div>
           {/* Desktop Navigation */}
@@ -147,7 +112,9 @@ export default function Header({ className }: { className?: string }) {
             ))}
             {/* Get Price Button */}
             <button
-              {...(pathname === "/contacts" ? { "custom-cursor": "black" } : {})}
+              {...(pathname === "/contacts"
+                ? { "custom-cursor": "black" }
+                : {})}
               className={`hidden xs:block ${pathname == "/contacts" ? "bg-[#FF3F1A] text-[#F0EDE8] hover:bg-[#151516]" : "bg-[#F0EDE8] text-[#151516] hover:bg-[#FF3F1A] "}  transition-colors duration-200 py-0.5 rounded-full leading-8.5 px-5 text-sm font-medium text-nowrap`}
               onClick={openModal}
             >
@@ -163,9 +130,14 @@ export default function Header({ className }: { className?: string }) {
               " transition-transform duration-300 sm:hidden inline-flex items-center justify-center p-2 group",
             )}
           >
-            <BurgerIcon className={cn(
-              pathname == "/contacts" ? "fill-[#FF3F1A] group-hover:fill-[#151516]" : "fill-[#F0EDE8] group-hover:fill-[#FF3F1A]",
-              "transition-colors duration-300 ")} />
+            <BurgerIcon
+              className={cn(
+                pathname == "/contacts"
+                  ? "fill-[#FF3F1A] group-hover:fill-[#151516]"
+                  : "fill-[#F0EDE8] group-hover:fill-[#FF3F1A]",
+                "transition-colors duration-300 ",
+              )}
+            />
           </button>
         </div>
 
@@ -184,7 +156,7 @@ export default function Header({ className }: { className?: string }) {
           "fixed inset-0 z-500 transition-all duration-600 max-h-screen",
           isModalOpen
             ? "opacity-100 scale-100"
-            : "opacity-0 scale-95 pointer-events-none"
+            : "opacity-0 scale-95 pointer-events-none",
         )}
         onClose={() => setIsModalOpen(false)}
         viewModel={formViewModel}
@@ -209,7 +181,7 @@ function HeaderItem({
         className,
         "hover:text-[#FF3F1A] font-cera transition-colors duration-200 my-2.5 text-sm font-medium text-nowrap relative",
         "after:[content:''] after:scale-x-0 after:w-full after:h-0.25 after:bg-[#FF3F1A] after:transition-transform after:duration-350 after:origin-left after:absolute after:bottom-0 after:left-0 ease-in-out",
-        "hover:after:scale-x-100"
+        "hover:after:scale-x-100",
       )}
     >
       {children}
