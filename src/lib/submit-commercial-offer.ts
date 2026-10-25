@@ -87,14 +87,13 @@ export default async function submitCommercialOffer(
 
     return {
       success: true,
-      message: "Sent successfully! We will contact you as soon as possible!",
+      message: "Successfully\nYour message has been sent",
     };
   } catch (err: unknown) {
     console.error("Ошибка при отправке заявки: ", err);
     return {
       success: false,
-      message:
-        "Failed to send. Please try again, or contact us using other methods.",
+      message: "Something went wrong\nYour message couldn’t be sent",
     };
   }
 }

@@ -40,7 +40,13 @@ export default function Toast({
         } ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         }`}
     >
-      <span className="flex-1 font-medium">{message}</span>
+      <span className="flex-1 font-medium">
+        {message.split("\n").map((line, index) => (
+          <span key={index} className="block">
+            {line}
+          </span>
+        ))}
+      </span>
       <button
         onClick={() => setIsVisible(false)}
         className="ml-3 text-lg font-bold hover:text-gray-200 transition-colors"

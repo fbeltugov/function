@@ -16,7 +16,14 @@ function CookieConsent() {
         setIsVisible(true);
       }, 5000)
     }
-    return () => clearTimeout(ti);
+
+    const openSettings = () => setIsVisible(true);
+    window.addEventListener("open-cookie-settings", openSettings);
+
+    return () => {
+      clearTimeout(ti);
+      window.removeEventListener("open-cookie-settings", openSettings);
+    };
   }, []);
 
   const handleAccept = () => {
