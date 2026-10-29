@@ -99,7 +99,7 @@ export default function CommercialOfferForm({
       setInvalidSend(true);
       showToast(
         "Some fields are missing or invalid. Please check and try again.",
-        true
+        true,
       );
       setIsSubmitting(false);
       return;
@@ -108,7 +108,7 @@ export default function CommercialOfferForm({
 
     try {
       const formData = Object.fromEntries(
-        new FormData(formRef.current).entries()
+        new FormData(formRef.current).entries(),
       ) as unknown as CommercialOfferFormData;
       const result = await submitCommercialOffer(formData);
 
@@ -121,7 +121,7 @@ export default function CommercialOfferForm({
         setSelectedBranding(null);
         setSelectedServices([]);
         setIsSecondRowVisible(false);
-        setSent(true)
+        setSent(true);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -131,147 +131,160 @@ export default function CommercialOfferForm({
     }
   };
 
-  return (<div
-    className={cn(
-      "flex flex-col sm:flex-row justify-start items-start",
-      className
-    )}
-  >
-    {/* Left container */}
-    <div className="grow-0 items-start text-[#151516] justify-start">
-      <p
-        className={cn(
-          "font-cera-pro font-medium md:text-[2.5rem] sm:text-[1.625rem] text-[1.5625rem] md:leading-[3.125rem] sm:leading-8 leading-7.5 tracking-normal text-nowrap",
-          colors.textPrimary
-        )}
-      >
-        Request for <br />a commercial <br className="hidden sm:block" />
-        offer
-      </p>
-    </div>
-    <div className="w-7.5 sm:w-[11cqw] shrink-0 grow-0"></div>
-    {/* Right container */}
-    <div className="flex flex-col items-center grow-1">
-      {!sent ? (
-        <form
-          ref={formRef}
-          className="grow-1 max-w-[30.3125rem] flex-col sm:pt-1.25 pt-7.5"
-          action={() => { }}
+  return (
+    <div
+      className={cn(
+        "flex flex-col items-start justify-start sm:flex-row",
+        className,
+      )}
+    >
+      {/* Left container */}
+      <div className="grow-0 items-start justify-start text-[#151516]">
+        <p
+          className={cn(
+            "font-cera-pro text-[1.5625rem] leading-7.5 font-medium tracking-normal text-nowrap sm:text-[1.625rem] sm:leading-8 md:text-[2.5rem] md:leading-[3.125rem]",
+            colors.textPrimary,
+          )}
         >
-          <input
-            type="text"
-            name="honeypot"
-            tabIndex={-1}
-            autoComplete="off"
-            style={{ display: "none" }}
-          />
-          <div>
-            <h3
-              className={cn(
-                "font-cera-pro font-medium text-[1.125rem] md:text-[1.875rem] md:mb-5 mb-5 sm:mb-4.5 text-nowrap",
-                colors.textPrimary
-              )}
-            >
-              What&apos;s Your Branding?
-            </h3>
-            <ChipRow
-              name="branding"
-              chipOptions={viewModel.brandingOptions}
-              selectedIds={selectedBranding ? [selectedBranding] : []}
-              onChipClick={handleBrandingSelect}
-              singleSelection={true}
-            />
-          </div>
-
-          <div
-            className={`transition-all duration-500 ease-in-out ${isSecondRowVisible
-              ? "opacity-100 translate-y-0 max-h-96"
-              : "opacity-0 translate-y-4 max-h-0 overflow-hidden"
-              }`}
+          Request for <br />a commercial <br className="hidden sm:block" />
+          offer
+        </p>
+      </div>
+      <div className="w-7.5 shrink-0 grow-0 sm:w-[11cqw]"></div>
+      {/* Right container */}
+      <div className="flex grow-1 flex-col items-center">
+        {!sent ? (
+          <form
+            ref={formRef}
+            className="max-w-[30.3125rem] grow-1 flex-col pt-7.5 sm:pt-1.25"
+            action={() => {}}
           >
-            <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+            <input
+              type="text"
+              name="honeypot"
+              tabIndex={-1}
+              autoComplete="off"
+              style={{ display: "none" }}
+            />
+            <div>
               <h3
                 className={cn(
-                  "sm:pt-7 pt-7 font-cera-pro font-medium text-[1.125rem] md:text-[1.875rem] sm:mb-4.5 mb-4.25 text-nowrap",
-                  colors.textPrimary
+                  "font-cera-pro mb-5 text-[1.125rem] font-medium text-nowrap sm:mb-4.5 md:mb-5 md:text-[1.875rem]",
+                  colors.textPrimary,
                 )}
               >
-                What We Offer
+                What&apos;s Your Branding?
               </h3>
               <ChipRow
-                name="services"
-                chipOptions={viewModel.currentServiceOptions}
-                selectedIds={selectedServices}
-                onChipClick={handleServiceToggle}
-                singleSelection={false}
+                name="branding"
+                chipOptions={viewModel.brandingOptions}
+                selectedIds={selectedBranding ? [selectedBranding] : []}
+                onChipClick={handleBrandingSelect}
+                singleSelection={true}
               />
             </div>
-          </div>
 
-          <div className="sm:h-10 h-12.5"></div>
-          <div className="max-w-67.5 xs:max-w-60.75 md:max-w-full sm:pr-0 pr-10">
-            <div className="flex flex-col justify-start items-stretch">
-              {/* Spacer between containers */}
-              <div>
-                <input type="hidden" name="source" value={"header"} />
-                <InputField
-                  name="name"
-                  value={name}
-                  autocomplete="name"
-                  onChange={setName}
-                  onValidChange={setNameValid}
-                  showRequiredHint={invalidSend}
-                  placeholder="Full Name"
-                  className="md:mb-12.5 mb-5.5"
-                  required={true}
-                />
-                <InputField
-                  name="phone"
-                  value={phone}
-                  autocomplete="tel tel-country-code tel-national"
-                  onChange={setPhone}
-                  formatFn={formatPhoneNumber}
-                  onValidChange={setPhoneValid}
-                  showRequiredHint={invalidSend}
-                  pattern="\+[0-9\s]{10,17}"
-                  placeholder="Phone"
-                  type="tel"
-                  className="md:mb-12.5 mb-5.5"
-                  required={true}
-                />
-                <InputField
-                  name="email"
-                  value={email}
-                  autocomplete="email"
-                  onChange={setEmail}
-                  ref={emailRef}
-                  onValidChange={setEmailValid}
-                  showRequiredHint={invalidSend}
-                  placeholder="Email"
-                  type="email"
-                  className="md:mb-12.5 mb-7.5"
-                  required={true}
-                />
-                <SubmitForm
-                  className=""
-                  disabled={
-                    !(nameValid && phoneValid && emailValid) || isSubmitting
-                  }
-                  onClick={handleSubmit}
+            <div
+              className={`transition-all duration-500 ease-in-out ${
+                isSecondRowVisible
+                  ? "max-h-96 translate-y-0 opacity-100"
+                  : "max-h-0 translate-y-4 overflow-hidden opacity-0"
+              }`}
+            >
+              <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+                <h3
+                  className={cn(
+                    "font-cera-pro mb-4.25 pt-7 text-[1.125rem] font-medium text-nowrap sm:mb-4.5 sm:pt-7 md:text-[1.875rem]",
+                    colors.textPrimary,
+                  )}
+                >
+                  What We Offer
+                </h3>
+                <ChipRow
+                  name="services"
+                  chipOptions={viewModel.currentServiceOptions}
+                  selectedIds={selectedServices}
+                  onChipClick={handleServiceToggle}
+                  singleSelection={false}
                 />
               </div>
             </div>
+
+            <div className="h-12.5 sm:h-10"></div>
+            <div className="xs:max-w-60.75 max-w-67.5 pr-10 sm:pr-0 md:max-w-full">
+              <div className="flex flex-col items-stretch justify-start">
+                {/* Spacer between containers */}
+                <div>
+                  <input type="hidden" name="source" value={"header"} />
+                  <InputField
+                    name="name"
+                    value={name}
+                    autocomplete="name"
+                    onChange={setName}
+                    onValidChange={setNameValid}
+                    showRequiredHint={invalidSend}
+                    placeholder="Full Name"
+                    className="mb-5.5 md:mb-12.5"
+                    required={true}
+                  />
+                  <InputField
+                    name="phone"
+                    value={phone}
+                    autocomplete="tel tel-country-code tel-national"
+                    onChange={setPhone}
+                    formatFn={formatPhoneNumber}
+                    onValidChange={setPhoneValid}
+                    showRequiredHint={invalidSend}
+                    pattern="\+[0-9\s]{10,17}"
+                    placeholder="Phone"
+                    type="tel"
+                    className="mb-5.5 md:mb-12.5"
+                    required={true}
+                  />
+                  <InputField
+                    name="email"
+                    value={email}
+                    autocomplete="email"
+                    onChange={setEmail}
+                    ref={emailRef}
+                    onValidChange={setEmailValid}
+                    showRequiredHint={invalidSend}
+                    placeholder="Email"
+                    type="email"
+                    className="mb-7.5 md:mb-12.5"
+                    required={true}
+                  />
+                  <SubmitForm
+                    className=""
+                    disabled={
+                      !(nameValid && phoneValid && emailValid) || isSubmitting
+                    }
+                    onClick={handleSubmit}
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        ) : (
+          <div
+            className={cn(
+              colors.textPrimary,
+              "tracking-mid text-2xl font-medium",
+            )}
+          >
+            Thank you. <br />
+            Your message has been received.
+            <br />
+            <br />
+            <button
+              className="font-normal underline underline-offset-6 hover:text-[#FF3F1A]"
+              onClick={() => setSent(false)}
+            >
+              Send another message
+            </button>
           </div>
-        </form>
-      ) : (
-        <div className={cn(colors.textPrimary, "text-2xl font-medium tracking-mid")}>
-          Thank you. <br />
-          Your message has been received.
-          <br /><br />
-          <button className="underline underline-offset-6 font-normal hover:text-[#FF3F1A]" onClick={() => setSent(false)}>New message</button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
-  </div>
-  )
+  );
 }
