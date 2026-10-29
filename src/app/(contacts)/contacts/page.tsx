@@ -58,8 +58,40 @@ export default function ContactsPage() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-row w-[58cqw] xs:w-1/2 xs:items-center pt-1 text-[#FF3F1A] text-[0.438rem] xs:text-[0.563rem] md:text-[0.875rem]">
-            © Functional Design Studio. All rights reserved
+          <div className="tracking-mid flex w-[58cqw] flex-col gap-2.5 pt-1 text-[0.438rem] text-[#FF3F1A] xs:w-1/2 xs:text-[0.563rem] md:text-[0.875rem] lg:gap-5">
+            <p>
+              © Function Design Studio is a global remote-first brand identity
+              studio. All{`\u00A0`}rights reserved
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <Link
+                href="/privacy-policy"
+                className="underline underline-offset-2 transition-colors duration-150 hover:text-[#151516]"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/cookie-policy"
+                className="underline underline-offset-2 transition-colors duration-150 hover:text-[#151516]"
+              >
+                Cookie Policy
+              </Link>
+              <Link
+                href="/terms-of-use"
+                className="underline underline-offset-2 transition-colors duration-150 hover:text-[#151516]"
+              >
+                Terms of Use
+              </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  window.dispatchEvent(new Event("open-cookie-settings"))
+                }
+                className="underline underline-offset-2 transition-colors duration-150 hover:text-[#151516]"
+              >
+                Cookie Settings
+              </button>
+            </div>
           </div>
         </div>
       </section>

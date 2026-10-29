@@ -55,7 +55,7 @@ export default function ServiceStepsBlock({
         >
           <div className="flex flex-row space-x-11.5  xs:space-x-0 @container">
             <div className="text-[1.5rem] leading-[1.875rem] tracking-mid md:text-[1.875rem] md:leading-[100%] md:tracking-mid font-medium text-[#FF3F1A] xs:pr-[5.2cqw]">
-              {`0${index + 1}`}
+              {String(index + 1).padStart(2, "0")}
             </div>
             <div className="flex flex-col xs:flex-row md:justify-between w-full">
               <h4 className="xs:w-[20cqw] text-[1.5rem] leading-[1.875rem] tracking-mid md:text-[clamp(1.5rem,3.2cqw,1.875rem)] md:leading-[100%] md:tracking-mid font-medium text-[#F0EDE8] mb-5.5 xs:pr-[6.1cqw] ">
