@@ -65,7 +65,7 @@ export default function Footer({ className }: { className: string }) {
           </div>
           <div className="xs:mt-17 mt-12.5 flex w-full flex-row items-start pb-12.5 md:mt-20 md:items-center">
             <div className="xs:flex-row xs:flex-wrap xs:w-1/2 xs:items-center xs:gap-y-3 tracking-mid flex w-[42cqw] flex-col space-x-2.5 pr-[6.3cqw] md:space-x-5 lg:pr-0">
-              <p className="xs:text-[0.875rem] tracking-mid text-[2.7cqw] whitespace-nowrap md:text-[clamp(0.875rem,2.4cqw,1.25rem)]">
+              <p className="xs:text-[0.875rem] tracking-mid xs:mb-0 mb-[10px] text-[2.7cqw] whitespace-nowrap md:text-[clamp(0.875rem,2.4cqw,1.25rem)]">
                 Discover our work on:
               </p>
               <div className="flex flex-row space-x-2.5 sm:space-x-5">
