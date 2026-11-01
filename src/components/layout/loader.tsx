@@ -130,7 +130,7 @@ export default function Loader() {
       <div
         ref={loaderBarRef}
         id="loader-bar"
-        className="fixed transform translate-x-[-100vw] w-screen bg-[#FF3F1A] h-screen font-bold text-[2.5rem] xs:text-[3.75rem] md:text-[6.25rem] px-2.5 md:px-5 flex items-center justify-end"
+        className="fixed transform translate-x-[-100vw] w-screen bg-[#FF3F1A] h-screen font-bold text-[30px] lg:text-[40px] px-2.5 md:px-5 flex items-center justify-end"
       >
         ƒ (<span className="value">0</span>%)
       </div>

@@ -43,7 +43,7 @@ export default function ServiceStepsBlock({
   return (
     <section
       ref={sectionRef}
-      className={`w-full fluid-container @container flex flex-col space-y-10 md:space-y-12.5 ${className}`}
+      className={`fluid-container @container flex w-full flex-col space-y-10 md:space-y-12.5 ${className}`}
     >
       {steps?.map((step, index) => (
         <div
@@ -51,14 +51,14 @@ export default function ServiceStepsBlock({
             if (el) stepsRef.current.push(el);
           }}
           key={index}
-          className="flex flex-col w-full group"
+          className="group flex w-full flex-col"
         >
-          <div className="flex flex-row space-x-11.5  xs:space-x-0 @container">
-            <div className="text-[1.5rem] leading-[1.875rem] tracking-mid md:text-[1.875rem] md:leading-[100%] md:tracking-mid font-medium text-[#FF3F1A] xs:pr-[5.2cqw]">
+          <div className="xs:space-x-0 @container flex flex-row space-x-11.5">
+            <div className="tracking-mid md:tracking-mid xs:pr-[5.2cqw] text-[1.5rem] leading-[1.875rem] font-medium text-[#FF3F1A] md:text-[1.875rem] md:leading-[100%]">
               {String(index + 1).padStart(2, "0")}
             </div>
-            <div className="flex flex-col xs:flex-row md:justify-between w-full">
-              <h4 className="xs:w-[20cqw] text-[1.5rem] leading-[1.875rem] tracking-mid md:text-[clamp(1.5rem,3.2cqw,1.875rem)] md:leading-[100%] md:tracking-mid font-medium text-[#F0EDE8] mb-5.5 xs:pr-[6.1cqw] ">
+            <div className="xs:flex-row flex w-full flex-col md:justify-between">
+              <h4 className="xs:w-[20cqw] tracking-mid md:tracking-mid xs:pr-[6.1cqw] mb-5.5 text-[24px] leading-[30px] font-medium text-[#F0EDE8] lg:text-[30px] lg:leading-[36px]">
                 {step.name?.map((name, index) => (
                   <span key={index} className="lg:whitespace-nowrap">
                     {name}
@@ -68,10 +68,10 @@ export default function ServiceStepsBlock({
                   </span>
                 ))}
               </h4>
-              <div className="xs:ml-[15cqw] md:ml-0 xs:w-[50.2cqw] md:w-[58.2cqw] flex flex-col space-y-0.5 text-[1rem] leading-[1.625rem] tracking-mid md:text-[clamp(1rem,2.2cqw,1.375rem)] md:leading-[clamp(1.625rem,3.2cqw,2.1875rem)] text-[#727272]">
+              <div className="xs:ml-[15cqw] xs:w-[50.2cqw] tracking-mid flex flex-col space-y-0.5 text-[1rem] leading-[1.625rem] text-[#727272] md:ml-0 md:w-[58.2cqw] md:text-[clamp(1rem,2.2cqw,1.375rem)] md:leading-[clamp(1.625rem,3.2cqw,2.1875rem)]">
                 <p
                   dangerouslySetInnerHTML={{ __html: step.description ?? "" }}
-                  className="text-[#F0EDE8] mb-2.75"
+                  className="mb-2.75 text-[#F0EDE8]"
                 />
                 <div className="flex flex-row flex-wrap space-x-16.75">
                   <span className="text-[#727272]">{step.duration}</span>
@@ -82,13 +82,13 @@ export default function ServiceStepsBlock({
                 {step.nextStages && (
                   <p
                     dangerouslySetInnerHTML={{ __html: step.nextStages ?? "" }}
-                    className="text-[#F0EDE8] pt-2.75 md:pt-7.5"
+                    className="pt-2.75 text-[#F0EDE8] md:pt-7.5"
                   />
                 )}
               </div>
             </div>
           </div>
-          <hr className="opacity-90 group-not-last:mt-10 group-not-last:md:mt-12.5 h-0 group-not-last:border-b-1 border-0 border-[#454545]" />
+          <hr className="h-0 border-0 border-[#454545] opacity-90 group-not-last:mt-10 group-not-last:border-b-1 group-not-last:md:mt-12.5" />
         </div>
       ))}
     </section>

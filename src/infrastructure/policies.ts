@@ -11,7 +11,7 @@ export interface Policy {
   closing?: string;
 }
 
-const paragraphGap = 'style="display:block;margin-top:5px"';
+const paragraphGap = 'style="display:block;margin-top:10px"';
 
 export const privacyPolicy: Policy = {
   title: "Privacy Policy",
@@ -35,11 +35,11 @@ export const privacyPolicy: Policy = {
     },
     {
       name: ["Cookies"],
-      description: `Our website uses cookies to ensure proper functionality, improve your browsing experience, and help us understand how visitors interact with our website. Depending on your preferences, cookies may include necessary, analytics, and functional categories.<span ${paragraphGap}>You can manage your cookie preferences at any time through our <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline">Cookie Settings</a>. Additional information about how cookies are used is available in our <a href="/cookie-policy" class="text-[#FF3F1A] underline">Cookie Policy</a>.</span>`,
+      description: `Our website uses cookies to ensure proper functionality, improve your browsing experience, and help us understand how visitors interact with our website. Depending on your preferences, cookies may include necessary, analytics, and functional categories.<span ${paragraphGap}>You can manage your cookie preferences at any time through our <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline underline-offset-5">Cookie Settings</a>. Additional information about how cookies are used is available in our <a href="/cookie-policy" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Policy</a>.</span>`,
     },
     {
       name: ["Analytics"],
-      description: `To improve the quality, usability, and performance of our website, we may use privacy-focused analytics services. These tools help us understand general website traffic and visitor interactions without using your personal information for advertising purposes.<span ${paragraphGap}>Analytics cookies are only enabled according to the preferences you choose through our <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline">Cookie Settings</a>.</span>`,
+      description: `To improve the quality, usability, and performance of our website, we may use privacy-focused analytics services. These tools help us understand general website traffic and visitor interactions without using your personal information for advertising purposes.<span ${paragraphGap}>Analytics cookies are only enabled according to the preferences you choose through our <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Settings</a>.</span>`,
     },
     {
       name: ["Third-Party", "Services"],
@@ -71,7 +71,7 @@ export const privacyPolicy: Policy = {
     },
     {
       name: ["Contact", "Information"],
-      description: `If you have any questions about this Privacy Policy or would like to exercise your privacy rights, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A]">hello@functiondesign.studio</a></span>`,
+      description: `If you have any questions about this Privacy Policy or would like to exercise your privacy rights, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A] underline underline-offset-[5px]">hello@functiondesign.studio</a></span>`,
     },
   ],
   closing:
@@ -95,11 +95,11 @@ export const cookiePolicy: Policy = {
     },
     {
       name: ["Cookie", "Categories"],
-      description: `Our website uses two categories of cookies.<span ${paragraphGap}>Necessary cookies are essential for the website to function properly. They support core functionality, security, accessibility, and the management of your privacy preferences. These cookies are always active.</span><span ${paragraphGap}>Analytics cookies help us understand how visitors interact with our website and improve its content, performance, and usability. They are used only with your consent and can be disabled at any time through <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline">Cookie Settings</a>.</span>`,
+      description: `Our website uses two categories of cookies.<span ${paragraphGap}>Necessary cookies are essential for the website to function properly. They support core functionality, security, accessibility, and the management of your privacy preferences. These cookies are always active.</span><span ${paragraphGap}>Analytics cookies help us understand how visitors interact with our website and improve its content, performance, and usability. They are used only with your consent and can be disabled at any time through <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Settings</a>.</span>`,
     },
     {
       name: ["Managing Your", "Preferences"],
-      description: `You can change your cookie preferences at any time through the <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline">Cookie Settings</a> available on our website.<span ${paragraphGap}>Necessary cookies always remain active because they are essential for the operation of the website.</span>`,
+      description: `You can change your cookie preferences at any time through the <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Settings</a> available on our website.<span ${paragraphGap}>Necessary cookies always remain active because they are essential for the operation of the website.</span>`,
     },
     {
       name: ["Third-Party", "Services"],
@@ -107,7 +107,7 @@ export const cookiePolicy: Policy = {
     },
     {
       name: ["Cookie Retention"],
-      description: `Cookies may remain on your device for different periods, depending on their purpose and configuration. Some are deleted when you close your browser, while others may be retained for a limited period.<span ${paragraphGap}>You can manage your cookie preferences at any time through <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline">Cookie Settings</a>.</span>`,
+      description: `Cookies may remain on your device for different periods, depending on their purpose and configuration. Some are deleted when you close your browser, while others may be retained for a limited period.<span ${paragraphGap}>You can manage your cookie preferences at any time through <a href="#" onclick="window.dispatchEvent(new Event('open-cookie-settings')); return false;" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Settings</a>.</span>`,
     },
     {
       name: ["Changes to This", "Cookie Policy"],
@@ -115,7 +115,7 @@ export const cookiePolicy: Policy = {
     },
     {
       name: ["Contact"],
-      description: `If you have any questions about how we use cookies or this Cookie Policy, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A]">hello@functiondesign.studio</a></span>`,
+      description: `If you have any questions about how we use cookies or this Cookie Policy, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A] underline underline-offset-[5px]">hello@functiondesign.studio</a></span>`,
     },
   ],
 };
@@ -124,7 +124,7 @@ export const termsOfUse: Policy = {
   title: "Terms of Use",
   slug: "terms-of-use",
   effectiveDate: "October 2026",
-  description: `These Terms of Use govern your access to and use of the Function Design Studio website. By using this website, you agree to these terms and acknowledge that they may be updated from time to time. Your use of this website is also subject to our <a href="/privacy-policy" class="text-[#FF3F1A] underline">Privacy Policy</a> and <a href="/cookie-policy" class="text-[#FF3F1A] underline">Cookie Policy</a>. If you do not agree with these Terms of Use, please discontinue using the website.`,
+  description: `These Terms of Use govern your access to and use of the Function Design Studio website. By using this website, you agree to these terms and acknowledge that they may be updated from time to time. Your use of this website is also subject to our <a href="/privacy-policy" class="text-[#FF3F1A] underline underline-offset-[5px]">Privacy Policy</a> and <a href="/cookie-policy" class="text-[#FF3F1A] underline underline-offset-[5px]">Cookie Policy</a>. If you do not agree with these Terms of Use, please discontinue using the website.`,
   steps: [
     {
       name: ["Website Use"],
@@ -156,7 +156,7 @@ export const termsOfUse: Policy = {
     },
     {
       name: ["Contact"],
-      description: `If you have any questions regarding these Terms of Use, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A]">hello@functiondesign.studio</a></span>`,
+      description: `If you have any questions regarding these Terms of Use, please contact us.<span ${paragraphGap}>Function Design Studio<br/><a href="mailto:hello@functiondesign.studio" class="text-[#FF3F1A] underline underline-offset-[5px]">hello@functiondesign.studio</a></span>`,
     },
   ],
 };

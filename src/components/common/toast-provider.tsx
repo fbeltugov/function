@@ -4,7 +4,7 @@ import React from "react";
 import Toast from "./toast";
 
 export const ToastContext = React.createContext<ToastContextType | undefined>(
-  undefined
+  undefined,
 );
 
 interface Toast {
@@ -29,7 +29,7 @@ export default function ToastProvider({
   const showToast = (
     message: string,
     isError: boolean = false,
-    duration: number = 4000
+    duration: number = 4000,
   ) => {
     const id = Math.random().toString(36).substr(2, 9);
     setToasts((prev) => [...prev, { id, message, isError, duration }]);
@@ -42,7 +42,7 @@ export default function ToastProvider({
   return (
     <ToastContext.Provider value={{ showToast, removeToast }}>
       {children}
-      <div className="fixed bottom-4 right-4 z-[999] space-y-2">
+      <div className="fixed right-[30px] bottom-[30px] z-[999] space-y-2">
         {toasts.map((toast) => (
           <Toast
             key={toast.id}
