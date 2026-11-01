@@ -11,7 +11,7 @@ export interface Policy {
   closing?: string;
 }
 
-const paragraphGap = 'style="display:block;margin-top:5px"';
+const paragraphGap = 'style="display:block;margin-top:10px"';
 
 export const privacyPolicy: Policy = {
   title: "Privacy Policy",
