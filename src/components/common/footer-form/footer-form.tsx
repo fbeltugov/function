@@ -68,10 +68,10 @@ export default function FooterForm({ className }: { className?: string }) {
   };
 
   return (
-    <div className={`${className} w-full @container`}>
+    <div className={`${className} @container w-full`}>
       {!sent ? (
         <Form noValidate ref={formRef} action={() => {}}>
-          <div className="xs:pr-[20%] md:pr-0 pr-0">
+          <div className="xs:pr-[20%] pr-0 md:pr-0">
             <input type="hidden" name="source" value={"footer"} />
             <input
               type="text"
@@ -116,26 +116,26 @@ export default function FooterForm({ className }: { className?: string }) {
               name="email"
               required
               showRequiredHint={invalidSend}
-              className="mt-5 md:mt-9.5 "
+              className="mt-5 md:mt-9.5"
               placeholder="Email"
             />
           </div>
-          <div className="flex flex-row space-x-5 md:space-x-7.5 items-center mt-7.5 md:mt-12.5">
+          <div className="mt-7.5 flex flex-row items-center space-x-5 md:mt-12.5 md:space-x-7.5">
             <button
               onClick={handleSubmit}
               className={cn(
                 isValid ? "bg-[#F0EDE8] hover:bg-[#FF3F1A]" : "bg-[#727272]",
-                "text-[#151516] rounded-full px-5 py-0.5 md:px-7.5 md:py-2.5 text-[0.875rem] md:text-[4.7cqw] leading-[2.125rem]  transition-colors duration-150  ",
+                "rounded-full px-5 py-0.5 text-[0.875rem] leading-[2.125rem] text-[#151516] transition-colors duration-150 md:px-7.5 md:py-2.5 md:text-[4.7cqw]",
               )}
             >
               Send
             </button>
-            <p className="text-[#B6BAAF] text-[0.438rem] xs:text-[0.563rem] md:text-[0.875rem] tracking-mid overflow-visible">
+            <p className="xs:text-[0.563rem] tracking-mid overflow-visible text-[0.438rem] text-[#B6BAAF] md:text-[0.875rem]">
               By submitting this form, <br />
               you agree to our{" "}
               <Link
                 href="/privacy-policy"
-                className="underline underline-offset-4 hover:text-[#FF3F1A] transition-colors duration-150"
+                className="underline underline-offset-4 transition-colors duration-150 hover:text-[#FF3F1A]"
               >
                 Privacy Policy
               </Link>
@@ -143,13 +143,13 @@ export default function FooterForm({ className }: { className?: string }) {
           </div>
         </Form>
       ) : (
-        <div className="text-[white]  text-2xl font-medium tracking-mid">
+        <div className="tracking-mid text-2xl font-medium text-[white]">
           Thank you. <br />
           Your message has been received
           <br />
           <br />
           <button
-            className="underline underline-offset-6 font-normal hover:text-[#FF3F1A]"
+            className="text-left font-normal underline underline-offset-6 hover:text-[#FF3F1A]"
             onClick={() => setSent(false)}
           >
             Send another message
