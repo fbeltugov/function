@@ -37,56 +37,56 @@ export default function FedorBlock({ className }: { className?: string }) {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`${className} w-full overflow-hidden`}
-    >
+    <section ref={sectionRef} className={`${className} w-full overflow-hidden`}>
       <div className="fluid-container @container">
-        <div className="w-full flex relative items-center justify-end mb-7.5 md:mb-11.5 xl:mb-18.25">
+        <div className="relative mb-7.5 flex w-full items-center justify-end md:mb-11.5 xl:mb-18.25">
           <div
             ref={pushIfNotNull(elementsRef.current)}
-            className="
-            w-full absolute top-1/2 left-0 transform -translate-y-1/2 z-20 pr-4
-            pointer-events-none @container
-            text-[#FF3F1A] font-bold leading-[16cqw] tracking-mid text-[19cqw] md:text[18.7cqw] xl:text-[19.2cqw] whitespace-nowrap
-            "
+            className="tracking-mid md:text[18.7cqw] @container pointer-events-none absolute top-1/2 left-0 z-20 w-full -translate-y-1/2 transform pr-4 text-[19cqw] leading-[16cqw] font-bold whitespace-nowrap text-[#FF3F1A] xl:text-[19.2cqw]"
           >
-            Fëdor <br />
-            Beltugov —
+            Fedor <br />
+            Beltiugov —
           </div>
           <Image
             ref={pushIfNotNull(elementsRef.current)}
             src={fedorImage}
-            alt="Fedor Beltugov"
-            className={`object-cover object-center w-[38cqw] rounded-[0.313rem] ${isImageTouched ? 'grayscale-0' : 'grayscale'} hover:grayscale-0 transition-[filter] duration-350 ease-in`}
+            alt="Fedor Beltiugov"
+            className={`w-[38cqw] rounded-[0.313rem] object-cover object-center ${isImageTouched ? "grayscale-0" : "grayscale"} transition-[filter] duration-350 ease-in hover:grayscale-0`}
             layout="cover"
             onTouchStart={() => setIsImageTouched(!isImageTouched)}
             onTouchEnd={() => {}}
           />
         </div>
-        <div className="text-[#F0EDE8] px-[10cqw] xl:px-[8.2cqw]">
-          <div className=" mb-3.75 md:mb-7.5 xl:mb-12.5 max-w-[27rem] md:max-w-[50.5rem] md:min-w-[27rem] md:w-[57.7cqw] @container">
-            <p
-              className="text-[clamp(0.875rem,4cqw,1.25rem)] md:text-[clamp(1.25rem,4.6cqw,1.875rem)] leading-[clamp(1.188rem,5.6cqw,1.625rem)] md:leading-[clamp(1.625rem,6cqw,2.688rem)]"
-            >
+        <div className="px-[10cqw] text-[#F0EDE8] xl:px-[8.2cqw]">
+          <div className="@container mb-3.75 max-w-[27rem] md:mb-7.5 md:w-[57.7cqw] md:max-w-[50.5rem] md:min-w-[27rem] xl:mb-12.5">
+            <p className="text-[clamp(0.875rem,4cqw,1.25rem)] leading-[clamp(1.188rem,5.6cqw,1.625rem)] md:text-[clamp(1.25rem,4.6cqw,1.875rem)] md:leading-[clamp(1.625rem,6cqw,2.688rem)]">
               Founder and owner of Function Design Studio. Multidisciplinary
-              designer & art director, focused on brand identity & UI / UX design.
-              Working in the field since 2008
+              designer & art director, focused on brand identity & UI / UX
+              design. Working in the field since 2008
             </p>
           </div>
           <div className="flex flex-row items-center">
-            <div className="text-[#F0EDE8] text-[0.75rem] tracking-mid md:text-[0.875rem] lg:text-[1.25rem]">
+            <div className="tracking-mid text-[0.75rem] text-[#F0EDE8] md:text-[0.875rem] lg:text-[1.25rem]">
               Get in touch with me through:
             </div>
-            <div className="flex flex-row space-x-3.75 ml-3.75 lg:space-x-5 lg:ml-5 *:transition-colors duration-300">
-              <Link target="_blank" href={contacts.socialLinks.whatsapp ?? "/#"}>
-                <WhatsappIcon className="fill-[#F0EDE8] hover:fill-[#FF3F1A] w-6.25 lg:w-8.75 transition-colors" />
+            <div className="ml-3.75 flex flex-row space-x-3.75 duration-300 *:transition-colors lg:ml-5 lg:space-x-5">
+              <Link
+                target="_blank"
+                href={contacts.socialLinks.whatsapp ?? "/#"}
+              >
+                <WhatsappIcon className="w-6.25 fill-[#F0EDE8] transition-colors hover:fill-[#FF3F1A] lg:w-8.75" />
               </Link>
-              <Link target="_blank" href={contacts.socialLinks.telegram ?? "/#"}>
-                <TelegramIcon className="fill-[#F0EDE8] hover:fill-[#FF3F1A] w-6.25 lg:w-8.75 transition-colors" />
+              <Link
+                target="_blank"
+                href={contacts.socialLinks.telegram ?? "/#"}
+              >
+                <TelegramIcon className="w-6.25 fill-[#F0EDE8] transition-colors hover:fill-[#FF3F1A] lg:w-8.75" />
               </Link>
-              <Link target="_blank" href={contacts.socialLinks.linkedin ?? "/#"}>
-                <LinkedinIcon className="fill-[#F0EDE8] hover:fill-[#FF3F1A] w-6.25 lg:w-8.75 transition-colors" />
+              <Link
+                target="_blank"
+                href={contacts.socialLinks.linkedin ?? "/#"}
+              >
+                <LinkedinIcon className="w-6.25 fill-[#F0EDE8] transition-colors hover:fill-[#FF3F1A] lg:w-8.75" />
               </Link>
             </div>
           </div>

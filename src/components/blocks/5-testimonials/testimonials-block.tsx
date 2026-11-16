@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     company: "CRM Magnetics",
     text: "We worked with Fedor on our brand identity, and it was a great experience. He brought structure and clarity to how we present ourselves, while helping us define our positioning. Smooth, collaborative, and highly efficient.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Anton Efremov",
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     company: "Akvilon",
     text: "Before working with Fedor, our brand lacked a clear visual system. He built a modern identity that strengthened our perception and made communication with clients and partners much clearer, including for the European market.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Daniel Iurev",
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     company: "IVA endo",
     text: "Fedor created a clear, trustworthy identity for IVA endo, immersing himself in our AI-driven medtech field and delivering precise, thoughtful work that supports our mission.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Andrew Kormysh",
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
     company: "AIM Property Development",
     text: "AIM Property Development and OZ Mall received clear, well-structured branding, with Fedor bringing creative direction and strategic insight to the process. His work was reliable, effective, and easy to collaborate on.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
 
   {
@@ -54,7 +54,7 @@ const testimonials: Testimonial[] = [
     company: "Atelier Morozov",
     text: "Fedor created the corporate identity and website for my menswear brand Morozov, delivering strong, precise branding and managing the full process professionally. Highly recommended.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Pavel Avriskin",
@@ -62,7 +62,7 @@ const testimonials: Testimonial[] = [
     company: "CALM",
     text: "Strong concepts made the final direction difficult to choose. A structured approach led to a clear and effective identity system. Reliable and highly professional.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
 
   {
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     company: "GOLDEX",
     text: "The identity work for GOLDEX was handled professionally and smoothly. The result is precise, memorable, and fully aligned with the company’s vision. Strongly recommended.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
 
   {
@@ -80,7 +80,7 @@ const testimonials: Testimonial[] = [
     company: "MyCouture",
     text: "The MyCouture project was delivered thoughtfully and with a clear creative approach. The branding and website gave the brand individuality and helped it connect with its audience. Highly recommended.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Alexander Cherny",
@@ -88,7 +88,7 @@ const testimonials: Testimonial[] = [
     company: "Belagra Group",
     text: "My company ordered a rebranding from Fedor, and he delivered the project professionally, efficiently, and on time. He listens carefully to client needs and implements them fully. I confidently recommend him.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
   {
     name: "Denis Makhalov",
@@ -96,7 +96,7 @@ const testimonials: Testimonial[] = [
     company: "",
     text: "Over many years of collaboration, Fedor has delivered strong, reliable work across multiple branding projects. He quickly understands business needs, offers thoughtful solutions, and remains a trusted partner I can fully rely on.",
     linkedinUrl:
-      "https://www.linkedin.com/in/fedor-beltugov™-a6896a37/details/recommendations/?detailScreenTabIndex=0",
+      "https://www.linkedin.com/in/fedorbeltiugov/details/recommendations/?detailScreenTabIndex=0",
   },
 ];
 
@@ -110,7 +110,8 @@ export default function TestimonialsBlock({
 
   const goToNext = () => {
     if (sliderRef.current) {
-      const firstCard = sliderRef.current.firstElementChild as HTMLElement | null;
+      const firstCard = sliderRef.current
+        .firstElementChild as HTMLElement | null;
       if (firstCard) {
         const cardWidth = firstCard.offsetWidth;
         const marginRight =
