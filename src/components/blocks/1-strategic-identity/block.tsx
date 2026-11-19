@@ -4,10 +4,9 @@ import WebGLBlurEffect from "../../blur/webgl-blur-component";
 
 export default function StrategicIdentityBlock({ className }: { className?: string }) {
   return (
-    <section className={` w-full flex flex-col @container max-w-screen overflow-hidden pl-2.5 xs:pl-0 -mt-[2.4cqw] ${className}`}>
-      <WebGLBlurEffect className="w-full bg-[#151516] pt-[2.4cqw] pb-[3.2cqw] -mb-[3.2cqw] ">
-        <div className="text-[#FF3F1A] font-bold md:leading-[15.22cqw] xs:leading-[15.36cqw] leading-[15.37cqw] tracking-mid xs:text-[18.229cqw] md:text-[18.75cqw] text-[18.29cqw] whitespace-nowrap"
-        >
+    <section className={`flex w-full max-w-screen flex-col overflow-hidden @container -mt-[2.4cqw] ${className}`}>
+      <WebGLBlurEffect className="w-full bg-[#151516] pt-[2.4cqw] pb-[3.2cqw] -mb-[3.2cqw]">
+        <div className="text-[#FF3F1A] font-bold md:leading-[15.22cqw] xs:leading-[15.36cqw] leading-[15.37cqw] tracking-mid xs:text-[18.229cqw] md:text-[18.75cqw] text-[18.29cqw] whitespace-nowrap pl-2.5 xs:pl-0">
           Strategic
           <br />
           Identity

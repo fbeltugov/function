@@ -20,8 +20,8 @@ export default function ContactsPage() {
   return (
     <main className="bg-[#F0EDE8] pt-32 xs:pt-17.5 md:pt-25 pb-5 md:pb-15 xl:pb-20">
       <ContactsHeadBlock />
-      <WebGLBlurEffect className="xl:mt-51 xs:mt-25 mt-16.25 pb-8.5 md:pb-14 xl:pb-27 bg-[#F0EDE8]">
-        <div className="max-xs:px-2.5 font-bold xs:text-[18.23cqw] text-[17.44cqw]  md:text-[18.75cqw] text-[#FF3F1A]  leading-[14.65cqw] xs:leading-[15.36cqw] md:leading-[15.28cqw] tracking-mid capitalize">
+      <WebGLBlurEffect className="xl:mt-51 xs:mt-25 mt-16.25 w-full max-w-screen overflow-hidden bg-[#F0EDE8] pb-8.5 md:pb-14 xl:pb-27">
+        <div className="font-bold text-[17.44cqw] leading-[14.65cqw] tracking-mid text-[#FF3F1A] capitalize pl-2.5 xs:pl-0 xs:text-[18.23cqw] xs:leading-[15.36cqw] md:text-[18.75cqw] md:leading-[15.28cqw]">
           Start your <br /> project
         </div>
       </WebGLBlurEffect>
