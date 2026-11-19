@@ -38,15 +38,15 @@ export default function FedorBlock({ className }: { className?: string }) {
 
   return (
     <section ref={sectionRef} className={`${className} w-full overflow-hidden`}>
-      <div className="fluid-container @container">
-        <div className="relative mb-7.5 flex w-full items-center justify-end md:mb-11.5 xl:mb-18.25">
-          <div
-            ref={pushIfNotNull(elementsRef.current)}
-            className="tracking-mid md:text[18.7cqw] @container pointer-events-none absolute top-1/2 left-0 z-20 w-full -translate-y-1/2 transform pr-4 text-[19cqw] leading-[16cqw] font-bold whitespace-nowrap text-[#FF3F1A] xl:text-[19.2cqw]"
-          >
-            Fedor <br />
-            Beltiugov —
-          </div>
+      <div className="relative mb-7.5 flex w-full items-center justify-end md:mb-11.5 xl:mb-18.25">
+        <div
+          ref={pushIfNotNull(elementsRef.current)}
+          className="tracking-mid md:text[18.7cqw] @container pointer-events-none absolute top-1/2 left-0 z-20 w-full -translate-y-1/2 transform pl-2.5 pr-4 text-[19cqw] leading-[16cqw] font-bold whitespace-nowrap text-[#FF3F1A] xs:pl-0 xl:text-[19.2cqw]"
+        >
+          Fedor <br />
+          Beltiugov —
+        </div>
+        <div className="fluid-container flex w-full justify-end">
           <Image
             ref={pushIfNotNull(elementsRef.current)}
             src={fedorImage}
@@ -57,6 +57,8 @@ export default function FedorBlock({ className }: { className?: string }) {
             onTouchEnd={() => {}}
           />
         </div>
+      </div>
+      <div className="fluid-container @container">
         <div className="px-[10cqw] text-[#F0EDE8] xl:px-[8.2cqw]">
           <div className="@container mb-3.75 max-w-[27rem] md:mb-7.5 md:w-[57.7cqw] md:max-w-[50.5rem] md:min-w-[27rem] xl:mb-12.5">
             <p className="text-[clamp(0.875rem,4cqw,1.25rem)] leading-[clamp(1.188rem,5.6cqw,1.625rem)] md:text-[clamp(1.25rem,4.6cqw,1.875rem)] md:leading-[clamp(1.625rem,6cqw,2.688rem)]">
